@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.2.0/prototype.js"></script>
+        <script language="javascript">
+        function visualizar(){
+           var NodeList = $('Programas').getElementsByTagName('option');
+           var listado = $A(NodeList);
+           alert("Numero de elementos de la lista: " + listado.length);
+           for (var i=0; i<listado.length; i++)
+           {               
+               alert("El elemento de la lista Nº " + (i+1) + " " + listado[i].innerHTML);
+               //Mediante la propiedad innerHTML del objeto listado accedemos al
+               //valor que muestra el option
+               alert("Tiene un descuento del " + listado[i].value);            
+               //La propiedad value nos devuelve el contenido almacenado en el 
+               //value de la etiqueta option
+           }
+        }
+        </script>
+    </head>
+<body>
+   <select id="Programas" size="10" >
+      <option value="5%">Microsoft Word 2013</option>
+      <option value="8%">Microsoft Excel 2013</option>
+      <option value="10%">Microsoft Access 2013</option>
+      <option value="3%">Microsoft PowerPoint 2013</option>
+      <option value="4%">Microsoft Outlook 2013</option>
+      <option value="9%">Adobe Photoshop CS6/CC</option>
+   </select>
+   <br />
+   <input type="button" value="Ver lista" onclick="visualizar();"/>
+</body>
+</html>

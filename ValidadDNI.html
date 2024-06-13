@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="frameworks/prototype.js"></script>
+        <script>
+            function nif(dni) {
+                //Obtiene el objeto que identifica a la capa donde se mostrará el resultado
+                var capa=$("respuesta");
+                    numero = dni.substr(0,dni.length-1);
+                    let = dni.substr(dni.length-1,1);
+                    numero = numero % 23;
+                    letra='TRWAGMYFPDXBNJZSQVHLCKET';
+                    letra=letra.substring(numero,numero+1);
+                    //Modifica el contenido de la capa para indicar el resultado de la validación
+                    if (letra!=let.toUpperCase())
+                        capa.innerHTML='Dni erroneo';
+                    else
+                        capa.innerHTML='Dni correcto';
+            }
+            
+            function muestracontenido(){
+                //Llama a la función que realiza el cálculo y le pasa el value del cuadro de texto
+                //del formulario
+                nif($F("dni"));
+            }
+        </script>
+    </head>
+    <body>
+        <h1> Formulario</h1>
+        <p>DNI: <input type="text" name="dni" id="dni" /></p>
+        <p>
+            <input type="button" name="boton" id="boton" value="Validar" onclick="muestracontenido()"/>
+        </p>
+        <div id="respuesta">Capa donde veremos si el DNI es correcto</div>
+    </body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ejemplo Arrastrar y Soltar</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <script type="text/javascript" src="http://script.aculo.us/scriptaculous.js"></script>
+        <style type="text/css">
+        #apDiv1 {
+                position: absolute;	left: 70px;	top: 15px;
+                width: 780px;	height: 150px; }
+
+        .capasdiscos{
+                position: absolute;	width: 100px;
+                height: 120px;	text-align: center;
+                background-color: #9966CC;  font-weight: bold;}
+
+        #disco2 {left: 85px; top: 190px;}
+        #disco3 {left: 215px; top: 190px;}
+        #disco4 {left: 345px; top: 190px;}
+        #disco5 {left: 475px; top: 190px;}
+        #disco6 {left: 605px; top: 190px;}
+        #disco7 {left: 735px; top: 190px;}
+
+        div#cesta.hover{ border: 5px solid #FF0000;}
+        div#cesta {
+                position: absolute;	left: 125px;	top: 345px;
+                width: 200px;	height: 200px;}
+
+        div#Resultado {
+                position: absolute;	left: 503px;	top: 392px;
+                width: 300px;	height: 43px;	background-color: #FFCC66;
+                text-align:center;	font-size:24px;	padding:15px;}
+        img{
+            height:100px;
+            width:100px;
+        }
+        img.banner{
+            width:780px;
+            height:150px;
+        }
+        img.cesta{
+           height:200px;
+           width:200px; 
+        }
+        </style>
+</head>
+
+<body>
+<div id="apDiv1"><img src="Imagenes/tienda/fondo.jpg" class="banner"/></div>
+<div id="disco2" class="capasdiscos"><img src="Imagenes/tienda/disco1.jpg"/>8,99 €</div>
+<div id="disco3" class="capasdiscos"><img src="Imagenes/tienda/disco2.jpg"/>3,99 €</div>
+<div id="disco4" class="capasdiscos"><img src="Imagenes/tienda/disco3.jpg"/>7,99 €</div>
+<div id="disco5" class="capasdiscos"><img src="Imagenes/tienda/disco4.jpg"/>15,99 €</div>
+<div id="disco6" class="capasdiscos"><img src="Imagenes/tienda/disco5.jpg"/>20,99 €</div>
+<div id="disco7" class="capasdiscos"><img src="Imagenes/tienda/disco6.jpg"/>8,99 €</div>
+<div id="cesta"><img src="Imagenes/tienda/cesta.jpg" class="cesta"/></div>
+<div id="Resultado">VALOR COMPRA: <strong> 0 €</strong></div>
+
+<script>
+new Draggable('disco2', {revert:true});
+new Draggable('disco3', {revert:true});
+new Draggable('disco4', {revert:true});
+new Draggable('disco5', {revert:true});
+new Draggable('disco6', {revert:true});
+new Draggable('disco7', {revert:true});
+
+var Total=0; //variable global que guardará el total de la compra desde que la página carga
+function calculo(capa){
+    var precios = new Array(8.99,3.99,7.99,15.99,20.99,8.99) 
+    var letras=capa.length; //determinamos cuantas letras tiene el id de la capa
+    //alert(letras);
+    var num = capa.charAt(letras-1);
+    Total+=precios[num-2];
+    //Devolvemos el resultado con dos decimales.    
+    return("VALOR DE LA COMPRA: "+ Total.toFixed(2) + " €");
+}
+Droppables.add('cesta', {
+	accept: 'capasdiscos',
+	hoverclass: 'hover',
+	onDrop: function(discoarrastrado, Resultado, evento){
+             $('Resultado').innerHTML=calculo(discoarrastrado.id);
+	}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>El Manierismo</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/prototype/1.7.3.0/prototype.js"></script>
+        <style type="text/css">
+        #apDiv1 {
+                position: absolute;
+                left: 9px;
+                top: 211px;
+                width: 635px;
+                height: 347px;
+                z-index: 1;
+                background-color: #FFFF99;
+                padding: 3px;
+        }
+        body {
+                background-color: #C9C;
+                font-size: 12px;
+                text-align: justify;
+        }
+        #resultado {
+                position: absolute;
+                left: 669px;
+                top: 211px;
+                width: 250px;
+                height: 149px;
+                z-index: 2;
+                background-color: #FF9933;
+                padding: 3px;
+        }
+        </style>
+        <script>
+            function muestracontenido(){
+                var capa=$("resultado");
+                var tp=$$("p");
+                capa.innerHTML+="<br><b>Número de párrafos total del documento: <span style='color:blue;font-size:10pt'>"+tp.length+"</span></b>";
+                tp=$$("#apDiv1 p");
+                capa.innerHTML+="<br><b>Número de párrafos dentro de la capa: <span style='color:blue;font-size:10pt'>"+tp.length+"</span></b>";
+            }
+        </script>
+    </head>
+
+<body onload="muestracontenido()">
+<h1 style="color:#0000FF; text-decoration: underline;">Manierismo</h1>
+<p><em>Manierismo</em> es la denominación historiográfica del periodo y estilo artístico que se sitúa convencionalmente en las décadas centrales y finales del siglo XVI (Cinquecento en italiano), como parte última del Renacimiento (es decir, un Bajo Renacimiento). Su caracterización es problemática, pues aunque inicialmente se definió como la imitación de la maniera de los grandes maestros del Alto Renacimiento (por ejemplo, el propio <strong>Tintoretto</strong> pretendía dibujar como <strong>Miguel Ángel</strong> y colorear como <strong>Tiziano</strong>), posteriormente se entendió como una reacción contra el ideal de belleza clasicista y una complicación laberíntica tanto en lo formal (<em>línea serpentinata</em>, <em>anamorfosis</em>, <em>exageración de los movimientos</em>, <em>los escorzos</em>, <em>las texturas</em>, <em>los almohadillados</em>, <em>alteración del orden en los elementos arquitectónicos</em>) como en lo conceptual (forzando el decorum y el equilibrio alto-renacentistas, una "violación de la figura"), que prefigura el "exceso" característico del <em>Barroco</em>. </p>
+<p>Por otro lado, también se identifica el <em>Manierismo</em> con un arte intelectualizado y elitista, opuesto al <em>Barroco</em>, que será un arte sensorial y popular. Considerado como una mera prolongación del genio creativo de los grandes genios del Alto Renacimiento (<strong>Leonardo</strong>, <strong>Rafael</strong>, <strong>Miguel Ángel</strong>, <strong>Tiziano</strong>) por sus epígonos (como los <strong>leonardeschi</strong>), el <em>Manierismo</em> fue generalmente minusvalorado por la crítica y la historiografía del arte como un estilo extravagante, decadente y degenerativo; un refinamiento erótico y una "afectación artificiosa" cuya elegancia y grazia no fue apreciada plenamente hasta su revalorización en el siglo XX, que comenzó a ver de forma positiva incluso su condición de auto-referencia del arte en sí mismo.</p>
+<div id="apDiv1">
+  <h1>Artista Destacado</h1>
+  <h2 style="color:#FF0000; font-style: italic">Bernardino Poccetti</h2>
+  <p><strong>Bernardino Poccett</strong>i (Florencia, 26 de agosto de 1548 - 10 de octubre de 1612), también llamado <strong>Barbatelli</strong> o <strong>Bernardino delle Grottesche</strong>, fue un pintor y decorador italiano del <em>Manierismo</em>.</p>
+  <h3 style="color:#0000CC">Biografía</h3>
+  <p>Comenzó su aprendizaje como decorador de fachadas y techos. En 1570 ingresó en la Accademia di Belle Arti, el gremio de los artistas. Sus inicios fueron en el taller de <strong>Michele Tosini</strong>, con quien participó en la decoración del Chiostro Grande de Santa Maria Novella en la década de los 80. En 1583-85 colaboró en la realización de los frescos del Palazzo Capponi, donde su trabajo expresa un brillante tardomanierismo</p>
+  <p>En la parte final de su carrera, formó parte del movimiento que se ha llamado <strong>Contramaniera</strong>, junto a artistas como Santi di Tito, Domenico Cresti, Domenico Passignano, Ludovico Cigoli, Jacopo da Empoli, Andrea Boscoli y Gregorio Pagani. Debido a su formación primitiva como decorador de fachadas y grutescos, nunca perdió su interés por el valor ornamental de las formas. Siempre intentó la conciliación de la verdad y la elegancia, conservando la complicación en el dibujo propia del Manierismo. Esto le distingue de sus compañeros contramanieristas, que intentaron un grado mayor de naturalismo en sus pinturas. Siempre fue fiel en el fondo a los principios del Manierismo, y aunque incluyó detalles naturalistas en su trabajo, siempre fueron ajenos a la esencia de su estilo.</p>
+</div>
+<div id="resultado">
+  <h1>Capa de Resultados</h1>
+</div>
+</body>
+</html>
